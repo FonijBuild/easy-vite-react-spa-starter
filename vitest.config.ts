@@ -1,28 +1,28 @@
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vitest/config'
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vitest/config";
 
-const rootDirectory = fileURLToPath(new URL('.', import.meta.url))
+const rootDirectory = fileURLToPath(new URL(".", import.meta.url));
 
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(rootDirectory, 'src'),
+      "@": path.resolve(rootDirectory, "src"),
     },
   },
   test: {
-    environment: 'jsdom',
+    environment: "jsdom",
     globals: true,
-    setupFiles: ['./tests/setup.ts'],
-    include: ['tests/**/*.test.{ts,tsx}'],
+    setupFiles: ["./tests/setup.ts"],
+    include: ["tests/**/*.test.{ts,tsx}"],
     coverage: {
-      provider: 'v8',
-      reporter: ['text', 'html'],
-      include: ['src/**/*.{ts,tsx}'],
-      exclude: ['src/routeTree.gen.ts', 'src/main.tsx', 'src/routes/**'],
+      provider: "v8",
+      reporter: ["text", "html"],
+      include: ["src/**/*.{ts,tsx}"],
+      exclude: ["src/routeTree.gen.ts", "src/main.tsx", "src/routes/**"],
     },
   },
-})
+});

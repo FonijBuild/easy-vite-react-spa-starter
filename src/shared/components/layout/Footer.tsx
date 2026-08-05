@@ -1,6 +1,6 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
-import { brandConfig } from '@/config/brand';
+import { brandConfig } from "@/config/brand";
 
 export function Footer() {
   const { t } = useTranslation();
@@ -10,11 +10,16 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container footer-inner">
         <p>
-          © {year} {brandConfig.name}. {t('footer.copyright')}
+          © {year} {brandConfig.name}. {t("footer.copyright")}
         </p>
         <div className="footer-links">
           {brandConfig.socialLinks.map((link) => (
-            <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+            >
               {link.label}
             </a>
           ))}

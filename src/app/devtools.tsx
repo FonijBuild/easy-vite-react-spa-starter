@@ -1,22 +1,22 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense } from "react";
 
 const RouterDevtools = import.meta.env.DEV
   ? lazy(async () => {
-      const module = await import('@tanstack/react-router-devtools')
-      return { default: module.TanStackRouterDevtools }
+      const module = await import("@tanstack/react-router-devtools");
+      return { default: module.TanStackRouterDevtools };
     })
-  : null
+  : null;
 
 const QueryDevtools = import.meta.env.DEV
   ? lazy(async () => {
-      const module = await import('@tanstack/react-query-devtools')
-      return { default: module.ReactQueryDevtools }
+      const module = await import("@tanstack/react-query-devtools");
+      return { default: module.ReactQueryDevtools };
     })
-  : null
+  : null;
 
 export function AppDevtools() {
   if (!RouterDevtools || !QueryDevtools) {
-    return null
+    return null;
   }
 
   return (
@@ -24,5 +24,5 @@ export function AppDevtools() {
       <RouterDevtools position="bottom-right" />
       <QueryDevtools buttonPosition="bottom-left" initialIsOpen={false} />
     </Suspense>
-  )
+  );
 }
