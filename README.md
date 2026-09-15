@@ -1,12 +1,15 @@
 <div align="center">
 
-# Easy Starter Vite React SPA
+# Easy Vite React SPA Starter
 
-**A lightweight, maintainable Vite + React foundation for API-driven SPAs, dashboards, internal tools, and embedded applications.**
+**A production-capable Vite + React foundation for fast, API-driven single-page applications.**
 
-[![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?logo=github&logoColor=white)](https://github.com/easy-starter/easy-starter-vite-react-spa/generate) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) ![Status: foundation](https://img.shields.io/badge/status-foundation-orange) ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white)
+[![Use this template](https://img.shields.io/badge/use%20this%20template-2EA44F?logo=github&logoColor=white)](https://github.com/FonijBuild/easy-vite-react-spa-starter/generate)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
+![Status: Foundation](https://img.shields.io/badge/status-foundation-F59E0B)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white) ![pnpm](https://img.shields.io/badge/pnpm-F69220?logo=pnpm&logoColor=white)
 
-[فارسی](README.fa.md) · [Documentation](https://github.com/easy-starter/easy-starter-docs) · [Report an issue](https://github.com/easy-starter/easy-starter-vite-react-spa/issues/new/choose)
+[Documentation](https://github.com/FonijBuild/fonij-docs) · [Discussions](https://github.com/orgs/FonijBuild/discussions) · [Issues](https://github.com/FonijBuild/easy-vite-react-spa-starter/issues)
 
 </div>
 
@@ -15,127 +18,49 @@
 > [!IMPORTANT]
 > This repository is currently in the **foundation stage**. Do not treat it as production-ready until the first stable release.
 
-## What it solves
+## Best for
 
-Avoids turning a small client-side application into an oversized full-stack project while preserving structure, testability, and production build quality.
+- Dashboards and internal tools
+- Authenticated client-side products
+- Frontends backed by Django or another external API
+- Embedded and operational web applications
 
-## Use this template for
-
-- API-driven single-page applications
-- Internal dashboards and admin tools
-- Embedded widgets and interactive tools
-- Static-hosted applications without a server runtime
-
-**Not intended for:** SEO-critical public websites, server-rendered applications, or secret-bearing backend logic.
+**Not for:** SEO-heavy public sites or applications that require significant server-rendered web behavior.
 
 ## Baseline
 
-- Vite, React, and TypeScript
-- Feature-oriented project boundaries
-- Routing, forms, API client, and error-state conventions
-- Environment validation without exposing secrets
-- Tests, linting, CI, and static deployment profiles
-
-Detailed architecture, conventions, deployment profiles, and extension guides belong in [`docs/`](docs/). Feature work starts from [`specs/`](specs/), and agent rules live in [`AGENTS.md`](AGENTS.md).
+- Vite, React, TypeScript, and typed routing
+- Feature-oriented application structure
+- API, query, form, environment, and error boundaries
+- Theme, i18n, testing, and CI foundations
+- AI-agent rules, specs, and architecture documentation
 
 ## Quick start
 
-1. Click **Use this template** or run:
-
-   ```bash
-   gh repo create my-project --template easy-starter/easy-starter-vite-react-spa --private --clone
-   cd my-project
-   ```
-
-2. Set the project name, package metadata, and environment values.
-3. Start the project:
-
-   ```bash
-   cp .env.example .env.local
-   make setup
-   make dev
-   make check
-   ```
-
-4. Write the first feature specification under `specs/`.
-5. Implement the feature and keep `make check` green.
-
-## Working agreement
-
-- Read `AGENTS.md` and the relevant specification before changing code.
-- Reuse existing patterns before adding abstractions or dependencies.
-- Never commit credentials or production data.
-- Run the repository quality checks before opening a pull request.
-- Record architecture-changing decisions in `docs/decisions/`.
-
-## Documentation
-
-Start with `docs/getting-started.md`. Broader AI-first development guidance is maintained in [Easy Starter Docs](https://github.com/easy-starter/easy-starter-docs).
-
-## Contributing and support
-
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for contribution rules and [`SUPPORT.md`](SUPPORT.md) for help. Security issues must follow [`SECURITY.md`](SECURITY.md).
-
-## License
-
-Released under the [MIT License](LICENSE).
-
-<!-- A scalable, maintainable, and high-performance foundation for dashboards, portals, internal tools, embedded apps, and client-side applications.
-
-## Why this starter
-
-- **Fast new routes:** file-based routing plus `pnpm generate:page`.
-- **Maintainable growth:** clear import direction between routes, pages, features, and shared code.
-- **High performance:** Vite 8, automatic route splitting, intent preloading, and query caching.
-- **Design flexibility:** Tailwind CSS v4 tokens, light/dark themes, and reusable UI primitives.
-- **Production checks:** strict TypeScript, ESLint, Vitest, Playwright, Docker, and CI.
-
-## Requirements
-
-- Node.js 22.12+
-- pnpm 10+
-
-## Start
+Preferred:
 
 ```bash
-corepack enable
+fonij create my-product
+```
+
+Direct template use:
+
+```bash
+gh repo create my-product --template FonijBuild/easy-vite-react-spa-starter --private --clone
+cd my-product
+cp .env.example .env
 pnpm install
 pnpm dev
 ```
 
-Commit the generated `pnpm-lock.yaml` before enabling CI on a new repository.
+## Project contract
 
-## Add a page
+- `.fonij/starter.json` describes this foundation to Fonij.
+- `AGENTS.md` defines repository rules for AI coding agents.
+- `specs/` contains implementation-ready feature specifications.
+- `docs/` contains architecture and repository-specific guidance.
+- Keep quality checks green before merging changes.
 
-run below command after adding new route:
-pnpm routes:generate
+## Contributing
 
-
-```bash
-pnpm generate:page reports app
-pnpm generate:page pricing public
-```
-
-`app` uses the dashboard shell. `public` uses the public website layout.
-
-## Main commands
-
-```bash
-pnpm dev
-pnpm check
-pnpm test:e2e
-pnpm build
-```
-
-## Structure
-
-```text
-src/
-├── app/       # providers, layouts, router, config, global styles
-├── routes/    # URL definitions, loaders, guards, search validation
-├── pages/     # route-level UI composition
-├── features/  # business capabilities
-└── shared/    # generic UI, API client, hooks, and helpers
-```
-
-For public marketing pages that require strong SEO, SSR, or static generation, use the Easy Starter Next.js Marketing Site instead of this SPA starter. -->
+Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before contributing. Security issues must follow [`SECURITY.md`](SECURITY.md).
